@@ -1,0 +1,22 @@
+[package]
+name = "idotmatrix"
+version = "0.1.0"
+edition = "2024"
+description = "Rust BLE control library for iDotMatrix pixel displays"
+license = "MIT"
+readme = "README.md"
+
+[features]
+default = ["image"]
+image = ["dep:image"]
+
+[dependencies]
+anyhow = "1"
+btleplug = "0.11"
+clap = { version = "4.5", features = ["derive"] }
+crc32fast = "1"
+futures = "0.3"
+image = { version = "0.25", default-features = false, features = ["bmp", "gif", "jpeg", "png", "webp"], optional = true }
+rand = "0.8"
+tokio = { version = "1", features = ["macros", "rt-multi-thread", "signal", "time"] }
+uuid = "1"
